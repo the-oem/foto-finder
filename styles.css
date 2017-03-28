@@ -24,12 +24,49 @@ section.input {
   padding-top: 40px;
 }
 
-button {
+.title, .caption {
+  display: block;
+  border: 0px;
+  width: 450px;
+  height: 40px;
+  margin: auto;
+}
+
+.caption {
+  margin-bottom: 20px;
+}
+
+.title .caption {
+  display: inline-block;
+  text-align: left;
+  width: 200px;
+}
+
+button, .choose-file {
   font-family: 'Open Sans', sans-serif;
   padding: 10px 80px;
   background-color: #5b4447;
   border-width: 0px;
   color: #ffffff;
+}
+
+.choose-file {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.choose-file + label {
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px 80px;
+  background-color: #5b4447;
+  border-width: 0px;
+  color: #ffffff;
+  cursor: pointer;
+  width: 80px
 }
 
 div.card {

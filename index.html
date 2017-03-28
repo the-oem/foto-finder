@@ -13,10 +13,13 @@
   </header>
 
   <section class="input">
-    <input class="title" placeholder="Title"></input>
-    <input class="caption" placeholder="Caption"></input>
-    <button class="choose-file">Choose File</button>
-    <button class="save">Save</button>
+    <label for="title">Title</label>
+    <input id="title" class="title"></input>
+    <label for="caption">Caption</label>
+    <input id="caption" class="caption"></input>
+    <input type="file" id="file" class="choose-file"></input>
+    <label for="file">Choose File</label>
+    <button class="save">Add to Album</button>
   </section>
 
   <section class="cardset">
@@ -31,7 +34,10 @@
     </div>
   </section>
 
-
+  <script
+   src="http://code.jquery.com/jquery-3.2.1.js"
+   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+   crossorigin="anonymous"></script>
   <script type="text/javascript" src="scripts.js"></script>
 </body>
 
