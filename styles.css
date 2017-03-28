@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: 'open-sans';
+}
+
+header {
+  color: #ffffff;
+  background-color: #3E2A35;
+  margin: 0px;
+  height:30px;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.card-actions {
+  background-color: #5b4447;
+}
+
+.card-action {
+  height: 30px;
+  width: 30px;
+}
