@@ -1,22 +1,49 @@
 body {
   margin: 0;
-  font-family: 'open-sans';
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  background-color: #C2B2B4;
 }
 
-header {
+header h1 {
   color: #ffffff;
   background-color: #3E2A35;
   margin: 0px;
-  height:30px;
+  height:60px;
+  font-size: 48pt;
 }
 
 .logo {
-  height: 30px;
-  width: 30px;
+  height: 55px;
+  width: 55px;
+}
+
+section.input {
+  background-color: #3E2A35;
+  height: 250px;
+  padding-top: 40px;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px 80px;
+  background-color: #5b4447;
+  border-width: 0px;
+  color: #ffffff;
+}
+
+div.card {
+  background-color: #ffffff;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
 }
 
 .card-actions {
   background-color: #5b4447;
+  padding: 10px;
 }
 
 .card-action {
