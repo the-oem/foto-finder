@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html>
-
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Foto Finder</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800,600" rel="stylesheet">
 </head>
 
 <body>
+
+  <header>
+    <h1>Foto <img class="logo"src="images/foto-finder-logo.svg" alt="logo">Finder</h1>
+  </header>
+
+  <section class="input">
+    <input class="title" placeholder="Title"></input>
+    <input class="caption" placeholder="Caption"></input>
+    <button class="choose-file">Choose File</button>
+    <button class="save">Save</button>
+  </section>
+
+  <section class="cardset">
+    <div class="card">
+      <h6>Title</h6>
+      <img src="" alt="">
+      <p>Lorem Ipsum Blah Blah</p>
+      <div class="card-actions">
+        <img class="card-action" src="images/delete.svg" alt="delete">
+        <img class="card-action" src="images/favorite.svg" alt="favorite">
+      </div>
+    </div>
+  </section>
+
 
   <script type="text/javascript" src="scripts.js"></script>
 </body>
