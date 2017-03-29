@@ -74,10 +74,6 @@ label {
   color: #C2B2B4;
 }
 
-.caption {
-  margin-bottom: 40px;
-}
-
 .save {
   font-size: 12pt;
   font-weight: 600;
@@ -110,13 +106,33 @@ label {
 .card,
 .card-favorite {
   width: 250px;
-  height: 340px;
+  height: 355px;
+  max-height: 340px;
   display: inline-block;
   margin: 20px 10px 20px;
 }
 
 .card {
   background-color: #FFF;
+}
+
+.card-title {
+  height: 30px;
+}
+
+.card-caption {
+  height: 110px;
+  display: block;
+  overflow: scroll;
+}
+
+.card-title,
+.card-caption {
+  width: inherit;
+  word-wrap: break-word;
+  text-align: left;
+  padding: 5px;
+  margin: 0;
 }
 
 .card-favorite {
@@ -184,4 +200,6 @@ button {
 
 .card-image {
   width: 250px;
+  height: 160px;
+  clip-path: fill-box;
 }

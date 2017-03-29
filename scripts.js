@@ -41,7 +41,7 @@ function addToAlbum(anImageCard) {
 	var $imageTitle = anImageCard.title;
 	var $imageCaption = anImageCard.caption;
 	var $imageName = anImageCard.imageName;
-	$(".cardset").prepend(`<div class="card"><h6>${$imageTitle}</h6><img src="photos/${$imageName}" alt="" class="card-image"><p>${$imageCaption}</p><div class="card-actions"><button type="button" name="button" class="delete-inactive" id="delete-image" /><button type="button" name="button" class="favorite-inactive" id="favorite-image" /></div></div>`);
+	$(".cardset").prepend(`<div class="card"><h5 class="card-title">${$imageTitle}</h5><img src="photos/${$imageName}" alt="" class="card-image"><p class="card-caption">${$imageCaption}</p><div class="card-actions"><button type="button" name="button" class="delete-inactive" id="delete-image" /><button type="button" name="button" class="favorite-inactive" id="favorite-image" /></div></div>`);
 	resetForm();
 }
 
