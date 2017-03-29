@@ -32,12 +32,19 @@ function addToAlbum(anImageCard) {
 	var $imageCaption = anImageCard.caption;
 	var $imageName = anImageCard.imageName;
 	$(".cardset").prepend(`<div class="card"><h6>${$imageTitle}</h6><img src="photos/${$imageName}" alt="" class="card-image"><p>${$imageCaption}</p><div class="card-actions"><button type="button" name="button" class="delete-inactive" id="delete-image" /><button type="button" name="button" class="favorite-inactive" id="favorite-image" /></div></div>`);
+	resetForm();
+}
 
+// Function to reset the input fields after a successful image card addition.
+function resetForm() {
+	$('#title').val('');
+	$('#caption').val('');
+	$('#file').val('');
+	toggleDisabled();
 }
 
 // Attach a delegated event handler to the parent container of the image cards to handle when a user clicks delete
-$(".cardset").on("click", "#delete-image", function (event) {
-	console.log($(this));
+$(".cardset").on("click", "#delete-image", function () {
 	$(this).closest(".card").remove();
 });
 
@@ -47,6 +54,24 @@ $(".cardset").on("click", "#favorite-image", function () {
 	$(this).toggleClass('favorite-active');
 });
 
+$('.user-input').on('input', '#title', readyToSubmit);
+$('.user-input').on('input', '#caption', readyToSubmit);
+$('.user-input').on('change', '#file', readyToSubmit);
 
+function readyToSubmit() {
+	var $title = $('#title').val();
+	var $caption = $('#caption').val();
+	var $filename = $('#file').val();
+	if ($title !== '' && $caption !== '' && $filename !== '') {
+		console.log('toggle button on');
+		toggleDisabled();
+	}
+}
+
+function toggleDisabled() {
+	//var $saveDisabled = $('.save').attr('disabled').val();
+	// if ($saveDisabled == 'disabled')
+	console.log($saveDisabled);
+}
 
 // TODO PHASE 3: Event listener to make sure the user has a valid text title and caption, and that they have selected an image file. If all those conditions don't exist, do not enable the Save button.
