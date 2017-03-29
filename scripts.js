@@ -1,6 +1,27 @@
-// Global colors
-var defaultCardBackground = '#FFF';
-var $favoriteCardBackground = 'pink';
+// Event listener on the Add To Album button. This creates a new ImageCard object and passes it off to be added to the album.
+$(".save").on("click", function () {
+	var $imageTitle = $('.title').val();
+	var $imageCaption = $('.caption').val();
+	var $imageFilename = getFilename($('.choose-file').val());
+	var imageCard = new ImageCard(imageTitle, imageCaption, imageFilename);
+	addToAlbum(imageCard);
+})
+
+// Attach a delegated event handler to the parent container of the image cards to handle when a user clicks delete.
+$(".cardset").on("click", "#delete-image", function () {
+	$(this).closest(".card").remove();
+});
+
+// Attach a delegated event handler to the parent container of the image cards to handle when a user clicks favorite.
+$(".cardset").on("click", "#favorite-image", function () {
+	$(this).parent().parent().css("background-color", $favoriteCardBackground);
+	$(this).toggleClass('favorite-active');
+});
+
+// Event listeners on the input container that allow for checking of valid inputs before enabling the Add to Album button.
+$('.user-input').on('input', '#title', readyToSubmit);
+$('.user-input').on('input', '#caption', readyToSubmit);
+$('.user-input').on('change', '#file', readyToSubmit);
 
 // Function to create an Image object. It has properties of Title and Caption.
 function ImageCard(title, caption, imageName) {
@@ -10,23 +31,12 @@ function ImageCard(title, caption, imageName) {
 	console.log(this);
 }
 
-// Event listener on the Add To Album button
-$(".save").on("click", function () {
-	var tempTitle = $('.title').val();
-	var tempCaption = $('.caption').val();
-	var tempFileName = getFilename($('.choose-file').val());
-	console.log('Title: ' + tempTitle + '\nCaption: ' + tempCaption + '\nFile Path: ' + tempFileName);
-
-	var imageCard = new ImageCard(tempTitle, tempCaption, tempFileName);
-	addToAlbum(imageCard);
-})
-
 // Function to split a filepath on \ and return just the filename.
 function getFilename(pathToImage) {
 	return pathToImage.split('\\').pop();
 }
 
-// Function to add an image to the album (page)
+// Function to add an image to the album (page).
 function addToAlbum(anImageCard) {
 	var $imageTitle = anImageCard.title;
 	var $imageCaption = anImageCard.caption;
@@ -43,35 +53,24 @@ function resetForm() {
 	toggleDisabled();
 }
 
-// Attach a delegated event handler to the parent container of the image cards to handle when a user clicks delete
-$(".cardset").on("click", "#delete-image", function () {
-	$(this).closest(".card").remove();
-});
-
-// Attach a delegated event handler to the parent container of the image cards to handle when a user clicks favorite
-$(".cardset").on("click", "#favorite-image", function () {
-	$(this).parent().parent().css("background-color", $favoriteCardBackground);
-	$(this).toggleClass('favorite-active');
-});
-
-$('.user-input').on('input', '#title', readyToSubmit);
-$('.user-input').on('input', '#caption', readyToSubmit);
-$('.user-input').on('change', '#file', readyToSubmit);
-
+// Function to check that the input fields all have data before enabling the Add to Album button.
 function readyToSubmit() {
 	var $title = $('#title').val();
 	var $caption = $('#caption').val();
 	var $filename = $('#file').val();
 	if ($title !== '' && $caption !== '' && $filename !== '') {
-		console.log('toggle button on');
 		toggleDisabled();
 	}
 }
 
+// Function to toggle the disabled flag on the Add to Album button.
 function toggleDisabled() {
-	//var $saveDisabled = $('.save').attr('disabled').val();
-	// if ($saveDisabled == 'disabled')
-	console.log($saveDisabled);
+	var $saveDisabled = $('.save').prop('disabled');
+	if ($saveDisabled) {
+		console.log('set disabled = false');
+		$('.save').prop('disabled', false);
+	} else {
+		console.log('set disabled = true');
+		$('.save').prop('disabled', true);
+	}
 }
-
-// TODO PHASE 3: Event listener to make sure the user has a valid text title and caption, and that they have selected an image file. If all those conditions don't exist, do not enable the Save button.
