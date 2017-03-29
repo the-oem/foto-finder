@@ -35,10 +35,16 @@ function addToAlbum(anImageCard) {
 	$(".cardset").prepend("<div class='card'><h6>" + anImageCard.title + "</h6><img src='photos/" + anImageCard.imageName + "' alt='' width='250px'><p>" + anImageCard.caption + "</p><div class='card-actions'><img id='delete-image' class='card-action' src='images/delete.svg' alt='delete'><img id='favorite-image' class='card-action' src='images/favorite.svg' alt='favorite'></div></div>");
 }
 
-// Attach a delegated event handler to the parent container of the image cards
+// Attach a delegated event handler to the parent container of the image cards to handle when a user clicks delete
 $(".cardset").on("click", "#delete-image", function (event) {
 	console.log($(this));
 	$(this).closest(".card").remove();
+});
+
+// Attach a delegated event handler to the parent container of the image cards to handle when a user clicks favorite
+$(".cardset").on("click", "#favorite-image", function () {
+
+	$(this).toggleClass('favorite-active');
 });
 
 // TODO PHASE 3: Event listener to make sure the user has a valid text title and caption, and that they have selected an image file. If all those conditions don't exist, do not enable the Save button.
