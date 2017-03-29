@@ -12,11 +12,13 @@
     <h1>Foto <img class="logo"src="images/foto-finder-logo.svg" alt="logo"> Finder</h1>
   </header>
 
-  <section class="input">
-    <label for="title">Title</label>
-    <input id="title" class="title"></input>
-    <label for="caption">Caption</label>
-    <input id="caption" class="caption"></input>
+  <section class="user-input">
+    <div class="text-input">
+      <label for="title" class="title-label">Title</label>
+      <input id="title" class="title"></input>
+      <label for="caption" class="caption-label">Caption</label>
+      <input id="caption" class="caption"></input>
+    </div>
     <input type="file" id="file" class="choose-file"></input>
     <label for="file">Choose File</label>
     <button class="save">Add to Album</button>
@@ -28,8 +30,8 @@
       <img src="" alt="">
       <p>Lorem Ipsum Blah Blah</p>
       <div class="card-actions">
-        <img class="card-action" src="images/delete.svg" alt="delete">
-        <img class="card-action" src="images/favorite.svg" alt="favorite">
+        <img class="card-action" id="delete-image" src="images/delete.svg" alt="delete">
+        <img class="card-action" id="favorite-image" src="images/favorite.svg" alt="favorite">
       </div>
     </div>
   </section>

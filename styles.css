@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -11,43 +15,45 @@ header h1 {
   margin: 0px;
   height:60px;
   font-size: 48pt;
+  text-align: center;
 }
 
 .logo {
-  height: 55px;
-  width: 55px;
+  height: 60px;
+  width: 60px;
+  padding-top: 10px;
 }
 
-section.input {
+section.user-input {
   background-color: #3E2A35;
-  height: 250px;
+  height: 300px;
   padding-top: 40px;
 }
 
 .title, .caption {
   display: block;
   border: 0px;
-  width: 450px;
+  width: 500px;
   height: 40px;
   margin: auto;
 }
+label {
+  color: #ffffff;
+  text-align:
+  padding-right: 400px;
+}
 
 .caption {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
-.title .caption {
-  display: inline-block;
-  text-align: left;
-  width: 200px;
-}
-
-button, .choose-file {
-  font-family: 'Open Sans', sans-serif;
-  padding: 10px 80px;
+.save {
+  font-size: 12pt;
+  font-weight: 600;
   background-color: #5b4447;
   border-width: 0px;
   color: #ffffff;
+  padding: 10px 50px;
 }
 
 .choose-file {
@@ -60,14 +66,16 @@ button, .choose-file {
 }
 
 .choose-file + label {
-  font-family: 'Open Sans', sans-serif;
-  padding: 10px 80px;
+  font-size: 12pt;
   background-color: #5b4447;
   border-width: 0px;
   color: #ffffff;
   cursor: pointer;
-  width: 80px
+  height: 70px;
+  padding: 8px 50px;
+  margin-right: 100px;
 }
+
 
 div.card {
   background-color: #ffffff;
