@@ -61,6 +61,14 @@ section.user-input {
   margin-top: 7px;
 }
 
+.choose-file+label:hover, .save:hover {
+  background-color: #938284;
+}
+
+.save:disabled {
+  cursor: not-allowed;
+}
+
 label {
   margin-left: 0px;
   color: #C2B2B4;
@@ -99,15 +107,13 @@ label {
   margin-right: 100px;
 }
 
-div.card {
-  background-color: #ffffff;
-}
 
 .card {
   width: 250px;
-  height: 300px;
+  height: 340px;
   display: inline-block;
-  margin: 20px 0px 20px 20px;
+  margin: 20px 10px 20px ;
+  background-color: #ffffff;
 }
 
 .card-actions {
