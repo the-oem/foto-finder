@@ -1,6 +1,6 @@
 // Global colors
 var defaultCardBackground = '#FFF';
-var favoriteCardBackground = 'pink';
+var $favoriteCardBackground = 'pink';
 
 // Function to create an Image object. It has properties of Title and Caption.
 function ImageCard(title, caption, imageName) {
@@ -32,7 +32,10 @@ function getFilename(pathToImage) {
 
 // Function to add an image to the album (page)
 function addToAlbum(anImageCard) {
-	$(".cardset").prepend("<div class='card'><h6>" + anImageCard.title + "</h6><img src='photos/" + anImageCard.imageName + "' alt='' width='250px'><p>" + anImageCard.caption + "</p><div class='card-actions'><img id='delete-image' class='card-action' src='images/delete.svg' alt='delete'><img id='favorite-image' class='card-action' src='images/favorite.svg' alt='favorite'></div></div>");
+	var $imageTitle = anImageCard.title;
+	var $imageCaption = anImageCard.caption;
+	var $imageName = anImageCard.imageName;
+	$(".cardset").prepend(`<div class="card"><h6>${$imageTitle}</h6><img src="photos/${$imageName}" alt=""><p>${$imageCaption}</p><div class="card-actions"><button type="button" name="button" class="delete-inactive" id="delete-image" /><button type="button" name="button" class="favorite-inactive" id="favorite-image" /></div></div>`);
 }
 
 // Attach a delegated event handler to the parent container of the image cards to handle when a user clicks delete
@@ -43,7 +46,7 @@ $(".cardset").on("click", "#delete-image", function (event) {
 
 // Attach a delegated event handler to the parent container of the image cards to handle when a user clicks favorite
 $(".cardset").on("click", "#favorite-image", function () {
-
+	$(this).parent().parent().css("background-color", $favoriteCardBackground);
 	$(this).toggleClass('favorite-active');
 });
 
