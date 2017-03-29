@@ -9,19 +9,32 @@ body {
   background-color: #C2B2B4;
 }
 
+header {
+  background-color: #3E2A35;
+}
+
 header h1 {
   color: #ffffff;
   background-color: #3E2A35;
   margin: 0px;
   height:60px;
   font-size: 48pt;
-  text-align: center;
+  /*text-align: center;*/
+  display: inline-block;
 }
 
 .logo {
-  height: 60px;
-  width: 60px;
-  padding-top: 10px;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+}
+
+.foto {
+  margin-right: 6px;
+}
+
+.finder {
+  margin-left: 87px;
 }
 
 section.user-input {
@@ -30,21 +43,33 @@ section.user-input {
   padding-top: 40px;
 }
 
+.text-input {
+  text-align: left;
+  width: 500px;
+  margin: auto;
+}
+
 .title, .caption {
+  font-weight: 600;
   display: block;
   border: 0px;
   width: 500px;
   height: 40px;
   margin: auto;
+  margin-bottom: 10px;
+  margin-top: 7px;
 }
+
 label {
-  color: #ffffff;
-  text-align:
-  padding-right: 400px;
+  margin-left: 0px;
+  color: #C2B2B4;
+}
+
+.caption-label {
 }
 
 .caption {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .save {
