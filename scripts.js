@@ -3,7 +3,7 @@ $(".save").on("click", function () {
 	var $imageTitle = $('.title').val();
 	var $imageCaption = $('.caption').val();
 	var $imageFilename = getFilename($('.choose-file').val());
-	var imageCard = new ImageCard(imageTitle, imageCaption, imageFilename);
+	var imageCard = new ImageCard($imageTitle, $imageCaption, $imageFilename);
 	addToAlbum(imageCard);
 })
 
