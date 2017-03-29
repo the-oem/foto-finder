@@ -19,7 +19,6 @@ header h1 {
   margin: 0px;
   height: 60px;
   font-size: 48pt;
-  /*text-align: center;*/
   display: inline-block;
 }
 
@@ -61,7 +60,8 @@ section.user-input {
   margin-top: 7px;
 }
 
-.choose-file+label:hover, .save:hover {
+.choose-file+label:hover,
+.save:hover {
   background-color: #938284;
 }
 
@@ -100,20 +100,27 @@ label {
   font-size: 12pt;
   background-color: #5b4447;
   border-width: 0px;
-  color: #ffffff;
+  color: #FFF;
   cursor: pointer;
   height: 70px;
   padding: 8px 50px;
   margin-right: 100px;
 }
 
-
-.card {
+.card,
+.card-favorite {
   width: 250px;
   height: 340px;
   display: inline-block;
-  margin: 20px 10px 20px ;
-  background-color: #ffffff;
+  margin: 20px 10px 20px;
+}
+
+.card {
+  background-color: #FFF;
+}
+
+.card-favorite {
+  background-color: #906D80;
 }
 
 .card-actions {
@@ -128,9 +135,8 @@ button:focus {
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 .favorite-inactive,
 .favorite-active,

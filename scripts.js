@@ -14,7 +14,7 @@ $(".cardset").on("click", "#delete-image", function () {
 
 // Attach a delegated event handler to the parent container of the image cards to handle when a user clicks favorite.
 $(".cardset").on("click", "#favorite-image", function () {
-	$(this).parent().parent().css("background-color", $favoriteCardBackground);
+	$(this).parent().parent().toggleClass('card-favorite');
 	$(this).toggleClass('favorite-active');
 });
 
@@ -63,14 +63,12 @@ function readyToSubmit() {
 	}
 }
 
-// Function to toggle the disabled flag on the Add to Album button.
+// Function to toggle the disabled flag on the Add to Album button. jQuery, you really should make this easier...le sigh.
 function toggleDisabled() {
 	var $saveDisabled = $('.save').prop('disabled');
 	if ($saveDisabled) {
-		console.log('set disabled = false');
 		$('.save').prop('disabled', false);
 	} else {
-		console.log('set disabled = true');
 		$('.save').prop('disabled', true);
 	}
 }
