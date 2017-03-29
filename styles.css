@@ -113,11 +113,8 @@ div.card {
 .card-actions {
   background-color: #5b4447;
   padding: 10px;
-}
-
-.card-action {
-  height: 30px;
-  width: 30px;
+  width: 100%;
+  height: 55px;
 }
 
 .favorite-inactive,
@@ -149,4 +146,17 @@ div.card {
 .delete-active,
 .delete-inactive:hover {
   background-image: url('images/delete-active.svg');
+}
+
+#delete-image {
+  float: left;
+}
+
+#favorite-image {
+  float: right;
+}
+
+#delete-image,
+#favorite-image {
+  margin: auto;
 }
