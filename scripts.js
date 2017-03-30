@@ -50,7 +50,7 @@ function resetForm() {
 	$('#title').val('');
 	$('#caption').val('');
 	$('#file').val('');
-	toggleDisabled();
+	toggleDisabled(true);
 }
 
 // Function to check that the input fields all have data before enabling the Add to Album button.
@@ -59,16 +59,13 @@ function readyToSubmit() {
 	var $caption = $('#caption').val();
 	var $filename = $('#file').val();
 	if ($title !== '' && $caption !== '' && $filename !== '') {
-		toggleDisabled();
+		toggleDisabled(false);
+	} else {
+		toggleDisabled(true);
 	}
 }
 
 // Function to toggle the disabled flag on the Add to Album button. jQuery, you really should make this easier...le sigh.
-function toggleDisabled() {
-	var $saveDisabled = $('.save').prop('disabled');
-	if ($saveDisabled) {
-		$('.save').prop('disabled', false);
-	} else {
-		$('.save').prop('disabled', true);
-	}
+function toggleDisabled(value) {
+	$('.save').prop('disabled', value);
 }
