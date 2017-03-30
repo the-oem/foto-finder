@@ -22,6 +22,23 @@ header h1 {
   display: inline-block;
 }
 
+.cardset {
+  width: 90%;
+  margin: auto;
+}
+
+.zero-state {
+  width: 100%;
+}
+
+.zero-state img {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  opacity: 0.1;
+}
+
 .logo {
   height: 80px;
   width: 80px;
@@ -107,7 +124,7 @@ label {
 .card-favorite {
   width: 250px;
   height: 355px;
-  max-height: 340px;
+  max-height: 355px;
   display: inline-block;
   margin: 20px 10px 20px;
 }

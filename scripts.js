@@ -5,11 +5,13 @@ $(".save").on("click", function () {
 	var $imageFilename = getFilename($('.choose-file').val());
 	var imageCard = new ImageCard($imageTitle, $imageCaption, $imageFilename);
 	addToAlbum(imageCard);
+	console.log('Card count = ' + $('.cardset').children($('.card')).length);
 })
 
 // Attach a delegated event handler to the parent container of the image cards to handle when a user clicks delete.
 $(".cardset").on("click", "#delete-image", function () {
 	$(this).closest(".card").remove();
+	console.log('Card count = ' + $('.cardset').children($('.card')).length);
 });
 
 // Attach a delegated event handler to the parent container of the image cards to handle when a user clicks favorite.
@@ -43,6 +45,7 @@ function addToAlbum(anImageCard) {
 	var $imageName = anImageCard.imageName;
 	$(".cardset").prepend(`<div class="card"><h5 class="card-title">${$imageTitle}</h5><img src="photos/${$imageName}" alt="" class="card-image"><p class="card-caption">${$imageCaption}</p><div class="card-actions"><button type="button" name="button" class="delete-inactive" id="delete-image" /><button type="button" name="button" class="favorite-inactive" id="favorite-image" /></div></div>`);
 	resetForm();
+	toggleZeroState();
 }
 
 // Function to reset the input fields after a successful image card addition.
@@ -51,6 +54,7 @@ function resetForm() {
 	$('#caption').val('');
 	$('#file').val('');
 	toggleDisabled(true);
+	toggleZeroState();
 }
 
 // Function to check that the input fields all have data before enabling the Add to Album button.
@@ -68,4 +72,13 @@ function readyToSubmit() {
 // Function to toggle the disabled flag on the Add to Album button. jQuery, you really should make this easier...le sigh.
 function toggleDisabled(value) {
 	$('.save').prop('disabled', value);
+}
+
+function toggleZeroState() {
+	console.log('Card count = ' + $('.cardset').children($('.card')).length);
+	if ($('.cardset').children($('.card')).length === 1) {
+		$('.zero-state').toggle(true);
+	} else {
+		$('.zero-state').toggle(false);
+	}
 }
